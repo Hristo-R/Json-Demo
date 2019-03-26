@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonResultDemo", "JsonResul
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonResultDemo.Models", "JsonResultDemo.Models\JsonResultDemo.Models.csproj", "{45264764-E15A-49DA-85BF-E901E3F4E25A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonResultDemo.Data", "JsonResultDemo.Data\JsonResultDemo.Data.csproj", "{E0B560E6-5FAE-4D73-B159-94AB296F0F1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{45264764-E15A-49DA-85BF-E901E3F4E25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45264764-E15A-49DA-85BF-E901E3F4E25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45264764-E15A-49DA-85BF-E901E3F4E25A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0B560E6-5FAE-4D73-B159-94AB296F0F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B560E6-5FAE-4D73-B159-94AB296F0F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B560E6-5FAE-4D73-B159-94AB296F0F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B560E6-5FAE-4D73-B159-94AB296F0F1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

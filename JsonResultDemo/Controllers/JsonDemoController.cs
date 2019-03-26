@@ -3,6 +3,7 @@
     using JsonResultDemo.Models;
     using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
+    using System.Web.Script.Serialization;
 
     public class JsonDemoController : Controller
     {
@@ -30,19 +31,47 @@
                 },
                 new UserModel
                 {
-                    UserId = 1,
+                    UserId = 2,
                     UserName = "chand",
                     Company = "Mindfire Solutions"
                 },
                 new UserModel
                 {
-                    UserId = 1,
+                    UserId = 3,
                     UserName = "Abc",
                     Company = "Abc Solutions"
                 }
             };
 
             return usersList;
+        }
+
+        // Get tthe Users data in Json Format  
+        public JsonResult GetUsersData()
+        {
+            var users = GetUsers();
+            return Json(users);
+        }
+
+        // Sample View  
+        public ActionResult Sample()
+        {
+            return View();
+        }
+
+        /// <summary>  
+        /// Update the user details  
+        /// </summary>  
+        /// <param name="usersJson">users list in JSON Format</param>  
+        /// <returns></returns>  
+        [HttpPost]
+        public JsonResult UpdateUsersDetail(string usersJson)
+        {
+            var js = new JavaScriptSerializer();
+            UserModel[] user = js.Deserialize<UserModel[]>(usersJson);
+
+            //TODO: user now contains the details, you can do required operations  
+            return Json("User Details are updated");
         }
     }
 }
