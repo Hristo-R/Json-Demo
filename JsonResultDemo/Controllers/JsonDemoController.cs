@@ -3,7 +3,7 @@
     using JsonResultDemo.Models;
     using Microsoft.AspNetCore.Mvc;
     using System.Collections.Generic;
-    using System.Web.Script.Serialization;
+    //using System.Web.Script.Serialization;
 
     public class JsonDemoController : Controller
     {
@@ -46,7 +46,7 @@
             return usersList;
         }
 
-        // Get tthe Users data in Json Format  
+        // Get the Users data in Json Format  
         public JsonResult GetUsersData()
         {
             var users = GetUsers();
@@ -64,14 +64,14 @@
         /// </summary>  
         /// <param name="usersJson">users list in JSON Format</param>  
         /// <returns></returns>  
-        [HttpPost]
-        public JsonResult UpdateUsersDetail(string usersJson)
-        {
-            var js = new JavaScriptSerializer();
-            UserModel[] user = js.Deserialize<UserModel[]>(usersJson);
+        //[HttpPost]
+        //public JsonResult UpdateUsersDetail(string usersJson)
+        //{
+        //    var js = new JavaScriptSerializer();
+        //    UserModel[] user = js.Deserialize<UserModel[]>(usersJson);
 
-            //TODO: user now contains the details, you can do required operations  
-            return Json("User Details are updated");
-        }
+        //    //TODO: user now contains the details, you can do required operations  
+        //    return Json("User Details are updated");
+        //}
     }
 }
