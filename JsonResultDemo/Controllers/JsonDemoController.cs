@@ -2,8 +2,8 @@
 {
     using JsonResultDemo.Models;
     using Microsoft.AspNetCore.Mvc;
+    using Newtonsoft.Json;
     using System.Collections.Generic;
-    //using System.Web.Script.Serialization;
 
     public class JsonDemoController : Controller
     {
@@ -73,5 +73,15 @@
         //    //TODO: user now contains the details, you can do required operations  
         //    return Json("User Details are updated");
         //}
+
+        [HttpPost]
+        public ActionResult Update(string usersJson)
+        {
+            // UserModel[] user = Deserialize<UserModel[]>(usersJson);
+            object o = JsonConvert.DeserializeObject(usersJson);
+            string json2 = JsonConvert.SerializeObject(o, Formatting.Indented);
+
+            return new EmptyResult();
+        }
     }
 }
