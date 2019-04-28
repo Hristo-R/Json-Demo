@@ -41,7 +41,7 @@
             url: '/JsonDemo/Update',
             context: document.body,
             dataType: 'json',
-            data: { "usersJson": JSON.stringify(usersJson) },
+            data: { "usersJson":  JSON.stringify(jsonObjects)  },
             success: function (result) {
                 alert(result);
             },
@@ -64,7 +64,7 @@
         userDetails["UserId"] = 1;
         userDetails["UserName"] = "User- " + 1;
         userDetails["Company"] = "Company- " + 1;
-        usersList = [userDetails];
+        usersList.push(userDetails);
 
         userDetails["UserId"] = 2;
         userDetails["UserName"] = "User- " + 2;
@@ -76,6 +76,6 @@
         userDetails["Company"] = "Company- " + 3;
         usersList.push(userDetails);
 
-        return usersList;
+        return JSON.stringify(usersList);
     }
 </script>  
