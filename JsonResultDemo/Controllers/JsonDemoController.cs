@@ -77,11 +77,17 @@
         [HttpPost]
         public ActionResult Update(string usersJson)
         {
-            // UserModel[] user = Deserialize<UserModel[]>(usersJson);
-            object o = JsonConvert.DeserializeObject(usersJson);
-            string json2 = JsonConvert.SerializeObject(o, Formatting.Indented);
+            UserModel[] user = JsonConvert.DeserializeObject<UserModel[]>(usersJson);
+            //object o = JsonConvert.DeserializeObject(usersJson);
+            //string json2 = JsonConvert.SerializeObject(o, Formatting.Indented);
 
             return new EmptyResult();
+
+
+
+
+
+
         }
     }
 }

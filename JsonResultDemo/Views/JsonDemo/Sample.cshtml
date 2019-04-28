@@ -24,9 +24,15 @@
 <script lang="en" type="text/javascript">
     function UpdateUserDetail() {
         var usersJson = GetSampleUsersList();
-        var getReportColumnsParams = {
-            "usersJson": usersJson
-        };
+        //var getReportColumnsParams = {
+        //    "usersJson": usersJson
+        //};
+        var jsonObjects = [
+            { id: 1, name: "amit" },
+            { id: 2, name: "ankit" },
+            { id: 3, name: "atin" },
+            { id: 4, name: "puneet" }];
+
         $.ajax({
             type: "POST",
             traditional: true,
@@ -34,7 +40,8 @@
             cache: false,
             url: '/JsonDemo/Update',
             context: document.body,
-            data: getReportColumnsParams,
+            dataType: 'json',
+            data: { "usersJson": JSON.stringify(usersJson) },
             success: function (result) {
                 alert(result);
             },
@@ -48,12 +55,27 @@
     function GetSampleUsersList() {
         var userDetails = {};
         var usersList = [];
-        for (var i = 1; i <= 3; i++) {
-            userDetails["UserId"] = i;
-            userDetails["UserName"] = "User- " + i;
-            userDetails["Company"] = "Company- " + i;
-            usersList.push(userDetails);
-        }
-        return JSON.stringify(usersList);
+        //for (var i = 1; i <= 2; i++) {
+        //    userDetails["UserId"] = i;
+        //    userDetails["UserName"] = "User- " + i;
+        //    userDetails["Company"] = "Company- " + i;
+        //    usersList.push(userDetails);
+        //}
+        userDetails["UserId"] = 1;
+        userDetails["UserName"] = "User- " + 1;
+        userDetails["Company"] = "Company- " + 1;
+        usersList = [userDetails];
+
+        userDetails["UserId"] = 2;
+        userDetails["UserName"] = "User- " + 2;
+        userDetails["Company"] = "Company- " + 2;
+        usersList.push(userDetails);
+
+        userDetails["UserId"] = 3;
+        userDetails["UserName"] = "User- " + 3;
+        userDetails["Company"] = "Company- " + 3;
+        usersList.push(userDetails);
+
+        return usersList;
     }
 </script>  
