@@ -3,7 +3,9 @@
     using JsonResultDemo.Models;
     using Microsoft.AspNetCore.Mvc;
     using Newtonsoft.Json;
+    using System;
     using System.Collections.Generic;
+    using System.Linq;
 
     public class JsonDemoController : Controller
     {
@@ -75,12 +77,14 @@
         //}
 
         [HttpPost]
-        public ActionResult Update(string usersJson)
+        public ActionResult Update(string userModel)
         {
             //object o = JsonConvert.DeserializeObject(usersJson);
-            var usersList = JsonConvert.DeserializeObject(usersJson);
+            //var obj = JsonConvert.DeserializeObject<UserModel>(usersJson);
 
-            return View();
+
+
+            return View("UpdatedList", userModel);
         }
     }
 }
