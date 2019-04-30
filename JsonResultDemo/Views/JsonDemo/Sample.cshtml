@@ -27,11 +27,12 @@
         //var getReportColumnsParams = {
         //    "usersJson": usersJson
         //};
-        var jsonObjects = [
-            { id: 1, name: "amit" },
-            { id: 2, name: "ankit" },
-            { id: 3, name: "atin" },
-            { id: 4, name: "puneet" }];
+        //var jsonObjects = [
+        //    { UserId: 1, UserName: "name1", Company: "company1" },
+        //    { UserId: 2, UserName: "name2", Company: "company2" },
+        //    { UserId: 3, UserName: "name3", Company: "company3" },
+        //    { UserId: 4, UserName: "name4", Company: "company4" }];
+        var user = { UserId: 1, UserName: "name1", Company: "company1" };
 
         $.ajax({
             type: "POST",
@@ -41,7 +42,7 @@
             url: '/JsonDemo/Update',
             context: document.body,
             dataType: 'json',
-            data: { "usersJson":  JSON.stringify(jsonObjects)  },
+            data: {"userModel": JSON.stringify(user) },
             success: function (result) {
                 alert(result);
             },
