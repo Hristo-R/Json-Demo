@@ -27,12 +27,12 @@
         //var getReportColumnsParams = {
         //    "usersJson": usersJson
         //};
-        //var jsonObjects = [
-        //    { UserId: 1, UserName: "name1", Company: "company1" },
-        //    { UserId: 2, UserName: "name2", Company: "company2" },
-        //    { UserId: 3, UserName: "name3", Company: "company3" },
-        //    { UserId: 4, UserName: "name4", Company: "company4" }];
-        var user = { UserId: 1, UserName: "name1", Company: "company1" };
+        var jsonObjects = [
+            { UserId: 1, UserName: "name1", Company: "company1" },
+            { UserId: 2, UserName: "name2", Company: "company2" },
+            { UserId: 3, UserName: "name3", Company: "company3" },
+            { UserId: 4, UserName: "name4", Company: "company4" }];
+        //var user = { UserId: 1, UserName: "name1", Company: "company1" };
 
         $.ajax({
             type: "POST",
@@ -42,15 +42,15 @@
             url: '/JsonDemo/Update',
             context: document.body,
             dataType: 'json',
-            data: {"userModel": JSON.stringify(user) },
-            success: function (result) {
-                alert(result);
-            },
-            error: function (xhr) {
-                //debugger;
-                console.log(xhr.responseText);
-                alert("Error has occurred..");
-            }
+            data: { "usersJson": JSON.stringify(jsonObjects) },
+            //success: function (result) {
+            //    alert(result);
+            //},
+            //error: function (xhr) {
+            //    //debugger;
+            //    console.log(xhr.responseText);
+            //    alert("Error has occurred..");
+            //}
         });
     }
     function GetSampleUsersList() {
