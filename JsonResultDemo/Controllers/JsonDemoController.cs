@@ -77,14 +77,21 @@
         //}
 
         [HttpPost]
-        public ActionResult Update(string userModel)
+        public ActionResult Update(string usersJson)
         {
             //object o = JsonConvert.DeserializeObject(usersJson);
             //var obj = JsonConvert.DeserializeObject<UserModel>(usersJson);
+            // var js = new JavaScriptSerializer();
 
+            object o = JsonConvert.DeserializeObject(usersJson);
+            //string js = JsonConvert.SerializeObject(o, Formatting.Indented);
 
+            var users = JsonConvert.DeserializeObject<IEnumerable<UserModel>>(usersJson);
 
-            return View("UpdatedList", userModel);
+            var usersList = users.ToList();
+
+            //return View("UpdatedList", usersList);
+            return View(usersList);
         }
     }
 }
