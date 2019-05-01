@@ -43,14 +43,14 @@
             context: document.body,
             dataType: 'json',
             data: { "usersJson": JSON.stringify(jsonObjects) },
-            //success: function (result) {
-            //    alert(result);
-            //},
-            //error: function (xhr) {
-            //    //debugger;
-            //    console.log(xhr.responseText);
-            //    alert("Error has occurred..");
-            //}
+            success: function (result) {
+                alert(result);
+            },
+            error: function (xhr) {
+                //debugger;
+                console.log(xhr.responseText);
+                alert("Error has occurred..");
+            }
         });
     }
     function GetSampleUsersList() {

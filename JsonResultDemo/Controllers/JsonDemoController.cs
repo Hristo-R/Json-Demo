@@ -77,7 +77,7 @@
         //}
 
         [HttpPost]
-        public ActionResult Update(string usersJson)
+        public JsonResult Update(string usersJson)
         {
             //object o = JsonConvert.DeserializeObject(usersJson);
             //var obj = JsonConvert.DeserializeObject<UserModel>(usersJson);
@@ -90,8 +90,8 @@
 
             var usersList = users.ToList();
 
-            //return View("UpdatedList", usersList);
-            return View(usersList);
+            return Json("User Details are updated");
+            //return View(usersList);
         }
     }
 }
